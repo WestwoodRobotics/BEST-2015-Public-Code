@@ -42,7 +42,7 @@ if (temp <= (coal_max_num * match_num)):
 	min_percent = coal_ore_percent
 	max_percent = coal_ore_percent
 
-temp = (int)(input("How many magnetite scored: "))
+temp = int(input("How many magnetite scored: "))
 if (temp <= (magnetite_max_num * match_num)):
     magnetite_ore_percent = (float(temp) / (magnetite_max_num * match_num))
 if(min_percent > magnetite_ore_percent):
@@ -50,7 +50,7 @@ if(min_percent > magnetite_ore_percent):
 if(max_percent < magnetite_ore_percent):
 	max_percent = magnetite_ore_percent
 
-temp = (int)(input("How many bauxite scored: "))
+temp = int(input("How many bauxite scored: "))
 if (temp <= (bauxite_max_num * match_num)):
     bauxite_ore_percent = (float(temp) / (bauxite_max_num * match_num))
 if(min_percent > bauxite_ore_percent):
@@ -58,7 +58,7 @@ if(min_percent > bauxite_ore_percent):
 if(max_percent < bauxite_ore_percent):
 	max_percent = bauxite_ore_percent
 
-temp = (int)(input("How many chalcopyrite scored: "))
+temp = int(input("How many chalcopyrite scored: "))
 if (temp <= (chalcopyrite_max_num * match_num)):
     chalcopyrite_ore_percent = (float(temp) / (chalcopyrite_max_num * match_num))
 if(min_percent > chalcopyrite_ore_percent):
@@ -66,7 +66,7 @@ if(min_percent > chalcopyrite_ore_percent):
 if(max_percent < chalcopyrite_ore_percent):
 	max_percent = chalcopyrite_ore_percent
 
-temp = (int)(input("How many spodumene scored: "))
+temp = int(input("How many spodumene scored: "))
 if (temp <= (spodumene_max_num * match_num)):
     spodumene_ore_percent = (float(temp) / (spodumene_max_num * match_num))
 if(min_percent > spodumene_ore_percent):
@@ -77,13 +77,13 @@ if(max_percent < spodumene_ore_percent):
 print
 
 average_percent = (coal_ore_percent + magnetite_ore_percent + bauxite_ore_percent + chalcopyrite_ore_percent + spodumene_ore_percent) / 5
-coal_expanded_percent = (coal_ore_percent - min_percent)/(max_percent - min_percent)
-magnetite_expanded_percent = (magnetite_ore_percent - min_percent)/(max_percent - min_percent)
-bauxite_expanded_percent = (bauxite_ore_percent - min_percent)/(max_percent - min_percent)
-chalcopyrite_expanded_percent = (chalcopyrite_ore_percent - min_percent)/(max_percent - min_percent)
-spodumene_expanded_percent = (spodumene_ore_percent - min_percent)/(max_percent - min_percent)
+coal_expanded_percent = (coal_ore_percent - min_percent) / (max_percent - min_percent)
+magnetite_expanded_percent = (magnetite_ore_percent - min_percent) / (max_percent - min_percent)
+bauxite_expanded_percent = (bauxite_ore_percent - min_percent) / (max_percent - min_percent)
+chalcopyrite_expanded_percent = (chalcopyrite_ore_percent - min_percent) / (max_percent - min_percent)
+spodumene_expanded_percent = (spodumene_ore_percent - min_percent) / (max_percent - min_percent)
 
-avg_expanded_percent = (average_percent - min_percent)/(max_percent - min_percent)
+avg_expanded_percent = (average_percent - min_percent) / (max_percent - min_percent)
 
 coal_shift =  avg_expanded_percent - coal_expanded_percent
 magnetite_shift = avg_expanded_percent - magnetite_expanded_percent
@@ -97,9 +97,8 @@ bauxite_val = bauxite_current_val + (bauxite_current_val * bauxite_shift)
 chalcopyrite_val = chalcopyrite_current_val + (chalcopyrite_current_val * chalcopyrite_shift)
 spodumene_val = spodumene_current_val + (spodumene_current_val * spodumene_shift)
 
-print "Coal: " + str(coal_val) + " ( " + str(coal_shift * 100) + "% shift)"
-print "Magnetite: " + str(magnetite_val) + " ( " + str(magnetite_shift * 100) + "% shift)"
-print "Bauxite: " + str(bauxite_val) + " ( " + str(bauxite_shift * 100) + "% shift)"
-print "Chalcopyrite: " + str(chalcopyrite_val) + " ( " + str(chalcopyrite_shift * 100) + "% shift)"
-print "Spodumene: " + str(spodumene_val) + " ( " + str(spodumene_shift * 100) + "% shift)"
-print
+print "Coal: %s (%s%% shift)" % (coal_val, coal_shift * 100)
+print "Magnetite: %s (%s%% shift)" % (magnetite_val, magnetite_shift * 100)
+print "Bauxite: %s (%s%% shift)" % (bauxite_val, bauxite_shift * 100)
+print "Chalcopyrite: %s (%s%% shift)" % (chalcopyrite_val, chalcopyrite_shift * 100)
+print "Spodumene: %s (%s%% shift)" % (spodumene_val, spodumene_shift * 100)
