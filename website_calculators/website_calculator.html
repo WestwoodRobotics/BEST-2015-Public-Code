@@ -143,24 +143,24 @@ class="entry-content">
  		    <div>&nbsp;</div>
                     <div class="input-group">
                         Core Sample:
-                        <a id=t0 href="#" class="btn btn-primary" role="button" onclick="core(0); return false">?</a> or
-                        <a id=t1 href="#" class="btn btn-primary" role="button" onclick="core(1); return false">?</a> or
-		        <a id=t2 href="#" class="btn btn-primary" role="button" onclick="core(2); return false">?</a> or
-                        <a id=t3 href="#" class="btn btn-primary" role="button" onclick="core(3); return false">?</a> 
+                        <a id=t0 href="#" class="btn btn-primary" role="button" onclick="core(0); return false">None</a> or
+                        <a id=t1 href="#" class="btn btn-primary" role="button" onclick="core(1); return false">1</a> or
+		        <a id=t2 href="#" class="btn btn-primary" role="button" onclick="core(2); return false">2</a> or
+                        <a id=t3 href="#" class="btn btn-primary" role="button" onclick="core(3); return false">3</a> 
 		    </div>
 
 		    <div>&nbsp;</div>
                     <div class="input-group">
                         Air Filter:
-                        <a id=t4 href="#" class="btn btn-primary" role="button" onclick="filter(1); return false">?</a> or
-                        <a id=t5 href="#" class="btn btn-primary" role="button" onclick="filter(0); return false">?</a> 
+                        <a id=t4 href="#" class="btn btn-primary" role="button" onclick="filter(1); return false">Yes</a> or
+                        <a id=t5 href="#" class="btn btn-primary" role="button" onclick="filter(0); return false">No</a> 
 		    </div>
 
 		    <div>&nbsp;</div>
                     <div class="input-group">
                         Pipe:
-                        <a id=t6 href="#" class="btn btn-primary" role="button" onclick="pipe(1); return false">?</a> or
-                        <a id=t7 href="#" class="btn btn-primary" role="button" onclick="pipe(0); return false">?</a> 
+                        <a id=t6 href="#" class="btn btn-primary" role="button" onclick="pipe(1); return false">Yes</a> or
+                        <a id=t7 href="#" class="btn btn-primary" role="button" onclick="pipe(0); return false">No</a> 
 		    </div>
 
                     <div>&nbsp;</div>
@@ -187,15 +187,6 @@ class="entry-content">
     <script>
 	    //for (var i = 0; i < 40; i++)
 	    //	$('table > tbody').append('<tr><td id=td1_'+i+'>'+i+'</td><td id=td2_'+i+'>'+i+'</td><td id=td3_'+i+'>'+i+'</td></tr>');
-
-		$('a#t0').text(0);
-		$('a#t1').text(1);
-		$('a#t2').text(2);
-                $('a#t3').text(3);
-		$('a#t4').text(0);
-		$('a#t5').text(1);
-		$('a#t6').text(0);
-                $('a#t7').text(1);
 
 		var coal_val = 5;
 		var coal_points = 0;
@@ -244,9 +235,7 @@ class="entry-content">
 			
 			total_points =  coal_points + magnetite_points + bauxite_points + chalcopyrite_points + spodumene_points + limestone_points + rep_filter_points + rep_pipe_points + core_sample_points;
 
-			$('input#d1').val(total_points);
-
-			
+			$('input#d1').val(total_points);			
 
 
 		}
