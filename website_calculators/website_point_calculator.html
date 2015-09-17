@@ -165,14 +165,13 @@ class="entry-content">
 
                     <div>&nbsp;</div>
                     <div class="input-group">
-                        <a href="#" class="btn btn-primary" role="button" onclick="findPoints(); ">Calculate Points!</a>
+                        <a href="#codeword" class="btn btn-primary" role="button" onclick="findPoints(); ">Calculate Points!</a>
                     </div>
 
 
                     <div>&nbsp;<br><br><b>Your Points:</b><br>&nbsp;</div>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon3">Total: </span>
-                        <input id=d1 type="text" class="form-control" disabled placeholder="" aria-describedby="basic-addon1">
                     </div>
 
                     
@@ -210,34 +209,34 @@ class="entry-content">
 		function findPoints()
 		{
 			var temp = parseInt($('input#l1').val());
-			if (temp >= 0 && temp < 25);
-				coal_points = temp * coal_val;
+			if (temp >= 0 && temp < 25)
+				coal_points = temp * coal_val; 
 
 			var temp = parseInt($('input#l2').val());
-			if (temp >= 0 && temp < 21);
-				 magnetite_points = temp * magnetite_val;
+			if (temp >= 0 && temp < 21)
+				 magnetite_points = temp * magnetite_val; 
 
 			var temp = parseInt($('input#l3').val());
-			if (temp >= 0 && temp < 17);
-				bauxite_points = temp * bauxite_val;
+			if (temp >= 0 && temp < 17)
+				bauxite_points = temp * bauxite_val; 
 
 			var temp = parseInt($('input#l4').val());
-			if (temp >= 0 && temp < 13);
-				chalcopyrite_points = temp * chalcopyrite_val;
+			if (temp >= 0 && temp < 13)
+				chalcopyrite_points = temp * chalcopyrite_val; 
 
 			var temp = parseInt($('input#l5').val());
-			if (temp >= 0 && temp < 9);
-				spodumene_points = temp * spodumene_val;
+			if (temp >= 0 && temp < 9)
+				spodumene_points = temp * spodumene_val; 
 
 			var temp = parseInt($('input#l6').val());
-			if (temp >= 0 && temp < 6);
-				limestone_points = temp * limestone_val;
+			if (temp >= 0 && temp < 6)
+				limestone_points = temp * limestone_val; 
 			
 			total_points =  coal_points + magnetite_points + bauxite_points + chalcopyrite_points + spodumene_points + limestone_points + rep_filter_points + rep_pipe_points + core_sample_points;
 
-			$('input#d1').val(total_points);			
+			$('span#basic-addon3').text("Total: " + total_points);
 
-
+			reset();
 		}
 
 		function core(x)
@@ -253,6 +252,20 @@ class="entry-content">
 		function pipe(x)
 		{
 			rep_pipe_point = x * replacement_val; 
+		}
+
+		function reset()
+		{
+		coal_points = 0;
+		magnetite_points = 0;
+		bauxite_points = 0;
+		chalcopyrite_points = 0;
+		spodumene_points = 0; 
+		core_sample_points = 0;
+		rep_pipe_points = 0;
+		rep_filter_points = 0;
+		limestone_points = 0;
+		total_points = 0;
 		}
 
 		
@@ -278,6 +291,7 @@ href="http://www.google.com/calendar/event?eid=cjh0aGh1NWY3YTdrcXJudWJpMWk2OHVmM
 href="http://www.google.com/calendar/event?eid=NHE5bXU5bzl2MTJib2Z1Mm5jcmVlZDBtODggMXVuM3FqNmhldXNpNzc4cnZiZWMya3ZxYW9AZw" target="_blank"><strong>19 September, 2015</strong></br><small>Operation Educate Meeting - 10.00am</small></br><small>Parent Meeting - 10.00am</small></a></li><li><a
 href="http://www.google.com/calendar/event?eid=djQ4bDZ2MmptOWJzOHQxc2pnbm5zMGpzdGdfMjAxNTA5MjZUMTQwMDAwWiAxdW4zcWo2aGV1c2k3NzhydmJlYzJrdnFhb0Bn" target="_blank"><strong>26 September, 2015</strong></br><small>Operation Educate Meeting - 9.00am</small></a></li></ul></div></div></div></div></div></div></div>
 </main>
+<a NAME="codeword">
 <footer
 class="page-footer"><div
 class="container"><div
@@ -288,11 +302,14 @@ class="copyright-container">
 <span
 class="white-text copyright-span">© 2015 Copyright Westwood Robotics - Theme by Westwood Robotics</span><br/>
 <span
-class="white-text<tr></tr>ademark-span">All trademarks are the property of their respective owners.</span></div>
+class="white-text<tr></tr>ademark-span">Made by Qrules and Chutzpah7 for Westwood Robtics under GNU GPL v3, code 
+<a href="https://github.com/WestwoodRobotics/BEST-2015-Public-Code">here</a>
+</span></div>
 <a
 class="white-text right truncate" href="#">Back to Top</a></div></div>
 </footer> <script type='text/javascript' src='http://team2583.org/wordpress/wp-content/plugins/google-calendar-events/js/jquery.qtip.min.js?ver=2.3.2'></script> <script type='text/javascript'>var gce={"ajaxurl":"http:\/\/team2583.org\/wordpress\/wp-admin\/admin-ajax.php","loadingText":"Loading..."};</script> <script type='text/javascript' src='http://team2583.org/wordpress/wp-content/plugins/google-calendar-events/js/gce-script.js?ver=2.3.2'></script> <script type='text/javascript' src='http://team2583.org/wordpress/wp-content/plugins/google-calendar-events/js/imagesloaded.pkgd.min.js?ver=3.1.8'></script> </body></html>
 <!--
+*** This calculator was made for Westwood Robotics by Qrules under GNU GPL v3, code available at github.com/WestwoodRobotics/BEST-2015-Public-Code
 *** This site runs WP Super Minify plugin v1.3.1 - http://wordpress.org/plugins/wp-super-minify ***
 *** Total size saved: 10.008% | Size before compression: 14589 bytes | Size after compression: 13129 bytes. ***
 --><!-- WP Fastest Cache file was created in 1.0765819549561 seconds, on 17-09-15 0:35:11 Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)-->
