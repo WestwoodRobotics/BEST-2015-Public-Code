@@ -131,6 +131,30 @@
 								$("input[name=l4]").change(function(){chalcopyrite_points = parseInt($(this).val()) * chalcopyrite_val; regen();});
 								$("input[name=l5]").change(function(){spodumene_points = parseInt($(this).val()) * spodumene_val; regen();});
 								$("input[name=l6]").change(function(){limestone_points = parseInt($(this).val()) * limestone_val; regen();}); 
+								
+								var temp = parseInt($('input#l1').val());
+								if (temp > 25 || temp < 0)
+									$("input[name=l1]").change(0);
+								
+								var temp = parseInt($('input#l2').val());
+								if (temp > 21 || temp < 0)
+									$("input[name=l2]").change(0);
+
+								var temp = parseInt($('input#l3').val());
+								if (temp > 17 || temp < 0)
+									$("input[name=l3]").change(0);
+								
+								var temp = parseInt($('input#l4').val());
+								if (temp > 13 || temp < 0)
+									$("input[name=l4]").change(0);
+
+								var temp = parseInt($('input#l5').val());
+								if (temp > 9 || temp < 0)
+									$("input[name=l5]").change(0);  
+ 
+								var temp = parseInt($('input#l6').val());
+								if (temp > 6 || temp < 0)
+									$("input[name=l6]").change(0); 
 
 								$("input[name=core]").change(function(){core_sample_points = $(this).attr("val") * core_sample_base_val; regen();});
 
