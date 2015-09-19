@@ -32,7 +32,7 @@
 							<div class="entry-content">
 								<div class="row">
 									<div class="results center">
-										<h4 class="center orange-text text-darken-3">Score: <a class="green-text num-points">0</a> points</h4>
+										<h4 class="center orange-text text-darken-3">You would have earned <a class="green-text num-points">0</a> points</h4>
 									</div>
 									<form class="col s12">
 										<div class="row">
@@ -74,38 +74,38 @@
 											</div>
 										</div>
 										<div class="row">
-											<div class="col s12 m4 l4">
+											<div class="col s12 m6 l6">
 												<div class="input-field">
-													Core sample:
-													<input name="core" type="radio" id="no-cores" val="0"><label for="no-cores">None</label>
-													<input name="core" type="radio" id="one-cores" val="1"><label for="one-cores">Small</label>
-													<input name="core" type="radio" id="two-cores" val="2"><label for="two-cores">Medium</label>
-													<input name="core" type="radio" id="three-cores" val="3"><label for="three-cores">Large</label>
-												</div>
-											</div>
-											<div class="col s12 m4 l4">
-												<div class="input-field">
-													<div class="switch">
+													<div class="switch center">
 														<label>Filter not replaced<input type="checkbox" name="air_filter" /><span class="lever"></span>Filter replaced</label>
 													</div>
 												</div>
 											</div>
-											<div class="col s12 m4 l4">
+											<div class="col s12 m6 l6">
 												<div class="input-field">
-													<div class="switch">
+													<div class="switch center">
 														<label>Water Pipe not replaced<input type="checkbox" name="pipe" /><span class="lever"></span>Water Pipe replaced</label>
 													</div>
 												</div>
 											</div>
+											<div class="col l12">
+												<div class="input-field center">
+													Core sample number:
+													<p class="center"><input name="core" type="radio" id="no-cores" val="0"><label for="no-cores">None</label></p>
+													<p class="center"><input name="core" type="radio" id="one-cores" val="1"><label for="one-cores">1</label></p>
+													<p class="center"><input name="core" type="radio" id="two-cores" val="2"><label for="two-cores">2</label></p>
+													<p class="center"><input name="core" type="radio" id="three-cores" val="3"><label for="three-cores">3</label></p>
+												</div>
+											</div>
 										</div>
 										<div class="results center">
-											<h4 class="center orange-text text-darken-4">Score: <a class="green-text num-points">0</a> points</h4>
+											<h4 class="center orange-text text-darken-4">You would have earned <a class="green-text num-points">0</a> points</h4>
 										</div>
 									</form>
 								</div>
 							</div>
 							</div> <!-- /container -->
-							<script>
+							<script type="text/javascript" defer>
 								var coal_val = 5;
 								var coal_points = 0;
 								var magnetite_val = 7;
@@ -124,37 +124,13 @@
 								var limestone_val = 2;
 								var limestone_points = 0;
 								var total_points = 0;
-								
-								$("input[name=l1]").change(function(){coal_points = parseInt($(this).val()) * coal_val; regen();});
-								$("input[name=l2]").change(function(){magnetite_points = parseInt($(this).val()) * magnetite_val; regen();});
-								$("input[name=l3]").change(function(){bauxite_points = parseInt($(this).val()) * bauxite_val; regen();});
-								$("input[name=l4]").change(function(){chalcopyrite_points = parseInt($(this).val()) * chalcopyrite_val; regen();});
-								$("input[name=l5]").change(function(){spodumene_points = parseInt($(this).val()) * spodumene_val; regen();});
-								$("input[name=l6]").change(function(){limestone_points = parseInt($(this).val()) * limestone_val; regen();}); 
-								
-								var temp = parseInt($('input#l1').val());
-								if (temp > 25 || temp < 0)
-									$("input[name=l1]").change(0);
-								
-								var temp = parseInt($('input#l2').val());
-								if (temp > 21 || temp < 0)
-									$("input[name=l2]").change(0);
 
-								var temp = parseInt($('input#l3').val());
-								if (temp > 17 || temp < 0)
-									$("input[name=l3]").change(0);
-								
-								var temp = parseInt($('input#l4').val());
-								if (temp > 13 || temp < 0)
-									$("input[name=l4]").change(0);
-
-								var temp = parseInt($('input#l5').val());
-								if (temp > 9 || temp < 0)
-									$("input[name=l5]").change(0);  
- 
-								var temp = parseInt($('input#l6').val());
-								if (temp > 6 || temp < 0)
-									$("input[name=l6]").change(0); 
+								$("input[name=l1]").change(function(){if($(this).is(":invalid")) return false; coal_points = $(this).val() * coal_val; regen();});
+								$("input[name=l2]").change(function(){if($(this).is(":invalid")) return false; magnetite_points = $(this).val() * magnetite_val; regen();});
+								$("input[name=l3]").change(function(){if($(this).is(":invalid")) return false; bauxite_points = $(this).val() * bauxite_val; regen();});
+								$("input[name=l4]").change(function(){if($(this).is(":invalid")) return false; chalcopyrite_points = $(this).val() * chalcopyrite_val; regen();});
+								$("input[name=l5]").change(function(){if($(this).is(":invalid")) return false; spodumene_points = $(this).val() * spodumene_val; regen();});
+								$("input[name=l6]").change(function(){if($(this).is(":invalid")) return false; limestone_points = $(this).val() * limestone_val; regen();});
 
 								$("input[name=core]").change(function(){core_sample_points = $(this).attr("val") * core_sample_base_val; regen();});
 
@@ -192,11 +168,12 @@
 					<div class="footer-copyrights">
 						<div class="container">
 							<div class="copyright-container">
-								<span class="white-text copyright-span">© 2015 - <em>Entire site</em> designed and developed by Westwood Robotics</span><br/>
-								<a href="https://github.com/WestwoodRobotics/BEST-2015-Public-Code" target="_blank">View the source of this page</a>
+								<span class="white-text copyright-span">© 2015 - <em>Entire site</em> designed and developed by Westwood Robotics</span>
+								<a href="https://github.com/WestwoodRobotics/BEST-2015-Public-Code">Calculator on GitHub</a>
 							</div>
+						</div>
+						<a class="white-text right truncate" href="#">Back to Top</a>
 					</div>
-					<a class="white-text right truncate" href="#">Back to Top</a>
 				</div>
 			</div>
 		</footer>
