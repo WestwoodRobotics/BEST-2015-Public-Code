@@ -256,7 +256,7 @@ class="entry-content">
 			}	
 			var temp = parseInt($('input#l5').val());
 			if (temp >= 0 && temp <= (spodumene_max_num * match_num)) {
-			spodumene_ore_percent = (double(temp) / (spodumene_max_num * match_num));
+			spodumene_ore_percent = (float(temp) / (spodumene_max_num * match_num));
 			if(min_percent > spodumene_ore_percent)
 				min_percent = spodumene_ore_percent;
 			if(max_percent < spodumene_ore_percent)
