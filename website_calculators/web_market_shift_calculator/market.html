@@ -145,12 +145,12 @@ class="entry-content">
 
                     <div>&nbsp;<br><br><b>Coal Points:</b><br>&nbsp;</div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Total: </span>
+                        <span class="input-group-addon" id="basic-addon1">Total: </span>
                     </div>
 
 		    <div>&nbsp;<br><br><b>Magnetite Points:</b><br>&nbsp;</div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Total: </span>
+                        <span class="input-group-addon" id="basic-addon2">Total: </span>
                     </div>
 
 		    <div>&nbsp;<br><br><b>Bauxite Points:</b><br>&nbsp;</div>
@@ -160,12 +160,12 @@ class="entry-content">
 
 		    <div>&nbsp;<br><br><b>Chalcopyrite Points:</b><br>&nbsp;</div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Total: </span>
+                        <span class="input-group-addon" id="basic-addon4">Total: </span>
                     </div>
 
 		    <div>&nbsp;<br><br><b>Spodumene Points:</b><br>&nbsp;</div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Total: </span>
+                        <span class="input-group-addon" id="basic-addon5">Total: </span>
                     </div>
 
                     
@@ -226,13 +226,13 @@ class="entry-content">
 			
 			var temp = parseInt($('input#l1').val());
 			if (temp >= 0 && temp <= (coal_max_num * match_num)) {
-				coal_ore_percent = (double(temp) / (coal_max_num * match_num));
+				coal_ore_percent = temp / (coal_max_num * match_num);
 				min_percent = coal_ore_percent;
 				max_percent = coal_ore_percent;
 			}		
 			var temp = parseInt($('input#l2').val());
 			if (temp >= 0 && temp <= (magnetite_max_num * match_num)) {
-				magnetite_ore_percent = (double(temp) / (magnetite_max_num * match_num));
+				magnetite_ore_percent = temp / (magnetite_max_num * match_num);
 				if(min_percent > magnetite_ore_percent)
 					min_percent = magnetite_ore_percent;
 				if(max_percent < magnetite_ore_percent)
@@ -240,7 +240,7 @@ class="entry-content">
 			}	
 			var temp = parseInt($('input#l3').val());
 			if (temp >= 0 && temp <= (bauxite_max_num * match_num)) {
-				bauxite_ore_percent = (double(temp) / (bauxite_max_num * match_num));
+				bauxite_ore_percent = temp / (bauxite_max_num * match_num);
 				if(min_percent > bauxite_ore_percent)
 					min_percent = bauxite_ore_percent;
 				if(max_percent < bauxite_ore_percent)
@@ -248,7 +248,7 @@ class="entry-content">
 			}	
 			var temp = parseInt($('input#l4').val());
 			if (temp >= 0 && temp <= (chalcopyrite_max_num * match_num)) {
-			chalcopyrite_ore_percent = (double(temp) / (chalcopyrite_max_num * match_num));
+			chalcopyrite_ore_percent = temp / (chalcopyrite_max_num * match_num);
 			if(min_percent > chalcopyrite_ore_percent)
 				min_percent = chalcopyrite_ore_percent;
 			if(max_percent < chalcopyrite_ore_percent)
@@ -256,7 +256,7 @@ class="entry-content">
 			}	
 			var temp = parseInt($('input#l5').val());
 			if (temp >= 0 && temp <= (spodumene_max_num * match_num)) {
-			spodumene_ore_percent = (double(temp) / (spodumene_max_num * match_num));
+			spodumene_ore_percent = temp / (spodumene_max_num * match_num);
 			if(min_percent > spodumene_ore_percent)
 				min_percent = spodumene_ore_percent;
 			if(max_percent < spodumene_ore_percent)
@@ -284,11 +284,11 @@ class="entry-content">
 			chalcopyrite_val = chalcopyrite_current_val + (chalcopyrite_current_val * chalcopyrite_shift);
 			spodumene_val = spodumene_current_val + (spodumene_current_val * spodumene_shift);
 
-			//print "Magnetite: %s (%s%% shift)" % (magnetite_val, magnetite_shift * 100)
-			//print "Bauxite: %s (%s%% shift)" % (bauxite_val, bauxite_shift * 100)
-			//rint "Chalcopyrite: %s (%s%% shift)" % (chalcopyrite_val, chalcopyrite_shift * 100)
-			//print "Spodumene: %s (%s%% shift)" % (spodumene_val, spodumene_shift * 100)
-                        $('span#basic-addon3').text("Coal: %s (%s%% shift)" % (coal_val, coal_shift * 100));
+			$('span#basic-addon2').text("Magnetite: %s (%s%% shift)" % (magnetite_val, magnetite_shift * 100))
+			$('span#basic-addon3').text("Bauxite: %s (%s%% shift)" % (bauxite_val, bauxite_shift * 100))
+			$('span#basic-addon4').text("Chalcopyrite: %s (%s%% shift)" % (chalcopyrite_val, chalcopyrite_shift * 100))
+			$('span#basic-addon5').text("Spodumene: %s (%s%% shift)" % (spodumene_val, spodumene_shift * 100))
+                        $('span#basic-addon1').text("Coal: %s (%s%% shift)" % (coal_val, coal_shift * 100));
 			reset();
 		}
 
