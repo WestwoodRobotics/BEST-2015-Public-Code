@@ -1,0 +1,323 @@
+<!doctype html>
+<html class="no-js" lang="en-US" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<title>BEST 2015 Points Calculator by Westwood Robotics</title>
+		<meta name="theme-color" content="#E65100">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<link rel="stylesheet" href="/wordpress/wp-content/themes/wwroboticspress/style.css" type="text/css" />
+		<link rel="stylesheet" href="/wordpress/wp-content/themes/wwroboticspress/css/materialize.css" type="text/css" />
+		<link rel="stylesheet" href="/wordpress/wp-content/themes/wwroboticspress/css/wwroboticspress.css" type="text/css" />
+		<style>.input-field label{position:static; !important}</style>
+	</head>
+	<body class="page-template-default">
+		<header>
+			<div class="navbar-fixed">
+				<nav>
+					<div class="container">
+						<div class="nav-wrapper">
+							Westwood Robotics<a href="http://team2583.org" class="brand-logo waves-effect waves-light center" id="logo-container">Go Home</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main>
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="card-panel white">
+						<div class="entry-header"><h2 class="header">BEST 2015 Market Shift Calculator</h2></div>
+						<div class="entry-content">
+							<div class="row">
+								<div class="results">
+									<div id="result-coal">
+										Coal Points:<p class="result green-text"></p>
+									</div>
+									<div id="result-magnetite">
+										Magnetite Points:<p class="result green-text"></p>
+									</div>
+									<div id="result-bauxite">
+										Bauxite Points:<p class="result green-text"></p>
+									</div>
+									<div id="result-chalcopyrite">
+										Chalcopyrite Points:<p class="result green-text"></p>
+									</div>
+									<div id="result-spodumene">
+										Spodumene Points:<p class="result green-text"></p>
+									</div>
+								</div>
+								<form class="col s12">
+									<div class="row">
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												!@!<label for="" class="center">Number of individual rounds</label>
+												!@!<input name="n1" type="number" class="validate" min="0" max="0" placeholder="" />
+											</div>
+										</div>
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												<label for="n2" class="center">Coal</label>
+												<input name="n2" type="number" class="validate" min="0" max="24" placeholder="Coal (Max 24)" />
+											</div>
+										</div>
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												<label for="n3" class="center">Magnetite</label>
+												<input name="n3" type="number" class="validate" min="0" max="20" placeholder="Magnetite (Max 20)" />
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												<label for="n4" class="center">Bauxite</label>
+												<input name="n4" type="number" class="validate" min="0" max="16" placeholder="Bauxite (Max 16)" />
+											</div>
+										</div>
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												<label for="n5" class="center">Chalcopyrite</label>
+												<input name="n5" type="number" class="validate" min="0" max="12" placeholder="Chalcopyrite (Max 12)" />
+											</div>
+										</div>
+										<div class="col s12 m4 l4">
+											<div class="input-field">
+												<label for="n6" class="center">Spodemumene</label>
+												<input name="n6" type="number" class="validate" min="0" max="8" placeholder="Spodemumene (Max 8)" />
+											</div>
+										</div>
+									</div>
+									<div class="results">
+										<div id="result-coal">
+											Coal Points:<p class="result green-text"></p>
+										</div>
+										<div id="result-magnetite">
+											Magnetite Points:<p class="result green-text"></p>
+										</div>
+										<div id="result-bauxite">
+											Bauxite Points:<p class="result green-text"></p>
+										</div>
+										<div id="result-chalcopyrite">
+											Chalcopyrite Points:<p class="result green-text"></p>
+										</div>
+										<div id="result-spodumene">
+											Spodumene Points:<p class="result green-text"></p>
+										</div>
+									</div>
+								</div>
+								<script>
+										var coal_expanded_percent = 0.0;
+										var coal_ore_percent = 0.0;
+										var coal_current_val = 5;
+										var coal_val = 0.0;
+										var coal_max_num = 24;
+
+										var magnetite_expanded_percent = 0.0;
+										var magnetite_ore_percent = 0.0;
+										var magnetite_current_val = 7;
+										var magnetite_val = 0.0;
+										var magnetite_max_num = 20;
+
+										var bauxite_expanded_percent = 0.0;
+										var bauxite_ore_percent = 0.0;
+										var bauxite_current_val = 10;
+										var bauxite_val = 0.0;
+										var bauxite_max_num = 16;
+
+										var chalcopyrite_expanded_percent = 0.0;
+										var chalcopyrite_ore_percent = 0.0;
+										var chalcopyrite_current_val = 15;
+										var chalcopyrite_val = 0.0;
+										var chalcopyrite_max_num = 12;
+
+										var spodumene_expanded_percent = 0.0;
+										var spodumene_ore_percent = 0.0;
+										var spodumene_current_val = 25;
+										var spodumene_val = 0.0;
+										var spodumene_max_num = 8;
+
+										var avg_expanded_percent = 0.0;
+										var average_percent = 0.0;
+										var min_percent = 0.0;
+										var max_percent = 0.0;
+										var match_num = 0;
+
+										//Number of rounds
+										$("input[name=n1]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										//Coal
+										$("input[name=n2]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										//Magnetite
+										$("input[name=n3]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										//Bauxite
+										$("input[name=n4]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										//Chalcopyrite
+										$("input[name=n5]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										//Spodumene
+										$("input[name=n6]").change(function()
+										{
+											if(!$(this).is(":invalid"))
+											{
+												
+											}
+										});
+
+										function findPoints()
+										{
+											var temp = parseInt($('input#l0').val());
+											if (temp >= 0)
+												match_num = temp;
+											var temp = parseInt($('input#l1').val());
+											if (temp >= 0 && temp <= (coal_max_num * match_num)) {
+												coal_ore_percent = temp / (coal_max_num * match_num);
+												min_percent = coal_ore_percent;
+												max_percent = coal_ore_percent;
+													}
+											var temp = parseInt($('input#l2').val());
+											if (temp >= 0 && temp <= (magnetite_max_num * match_num)) {
+												magnetite_ore_percent = temp / (magnetite_max_num * match_num);
+												if(min_percent > magnetite_ore_percent)
+													min_percent = magnetite_ore_percent;
+												if(max_percent < magnetite_ore_percent)
+													max_percent = magnetite_ore_percent;
+												}
+											var temp = parseInt($('input#l3').val());
+											if (temp >= 0 && temp <= (bauxite_max_num * match_num)) {
+												bauxite_ore_percent = temp / (bauxite_max_num * match_num);
+												if(min_percent > bauxite_ore_percent)
+													min_percent = bauxite_ore_percent;
+												if(max_percent < bauxite_ore_percent)
+													max_percent = bauxite_ore_percent;
+												}
+											var temp = parseInt($('input#l4').val());
+											if (temp >= 0 && temp <= (chalcopyrite_max_num * match_num)) {
+											chalcopyrite_ore_percent = temp / (chalcopyrite_max_num * match_num);
+											if(min_percent > chalcopyrite_ore_percent)
+												min_percent = chalcopyrite_ore_percent;
+											if(max_percent < chalcopyrite_ore_percent)
+												max_percent = chalcopyrite_ore_percent;
+												}
+											var temp = parseInt($('input#l5').val());
+											if (temp >= 0 && temp <= (spodumene_max_num * match_num)) {
+											spodumene_ore_percent = temp / (spodumene_max_num * match_num);
+											if(min_percent > spodumene_ore_percent)
+												min_percent = spodumene_ore_percent;
+											if(max_percent < spodumene_ore_percent)
+												max_percent = spodumene_ore_percent;
+												}
+											average_percent = (coal_ore_percent + magnetite_ore_percent + bauxite_ore_percent + chalcopyrite_ore_percent + spodumene_ore_percent) / 5;
+											coal_expanded_percent = (coal_ore_percent - min_percent) / (max_percent - min_percent);
+											magnetite_expanded_percent = (magnetite_ore_percent - min_percent) / (max_percent - min_percent);
+											bauxite_expanded_percent = (bauxite_ore_percent - min_percent) / (max_percent - min_percent);
+											chalcopyrite_expanded_percent = (chalcopyrite_ore_percent - min_percent) / (max_percent - min_percent);
+											spodumene_expanded_percent = (spodumene_ore_percent - min_percent) / (max_percent - min_percent);
+											avg_expanded_percent = (average_percent - min_percent) / (max_percent - min_percent);
+											coal_shift =  avg_expanded_percent - coal_expanded_percent;
+											magnetite_shift = avg_expanded_percent - magnetite_expanded_percent;
+											bauxite_shift = avg_expanded_percent - bauxite_expanded_percent;
+											chalcopyrite_shift = avg_expanded_percent - magnetite_expanded_percent;
+											spodumene_shift = avg_expanded_percent - spodumene_expanded_percent;
+											coal_val = coal_current_val + (coal_current_val * coal_shift);
+											magnetite_val = magnetite_current_val + (magnetite_current_val * magnetite_shift);
+											bauxite_val = bauxite_current_val + (bauxite_current_val * bauxite_shift);
+											chalcopyrite_val = chalcopyrite_current_val + (chalcopyrite_current_val * chalcopyrite_shift);
+											spodumene_val = spodumene_current_val + (spodumene_current_val * spodumene_shift);
+											$('span#basic-addon2').text("Magnetite: %s (%s%% shift)" % (magnetite_val, magnetite_shift * 100))
+											$('span#basic-addon3').text("Bauxite: %s (%s%% shift)" % (bauxite_val, bauxite_shift * 100))
+											$('span#basic-addon4').text("Chalcopyrite: %s (%s%% shift)" % (chalcopyrite_val, chalcopyrite_shift * 100))
+											$('span#basic-addon5').text("Spodumene: %s (%s%% shift)" % (spodumene_val, spodumene_shift * 100))
+								$('span#basic-addon1').text("Coal: %s (%s%% shift)" % (coal_val, coal_shift * 100));
+											reset();
+										}
+										function reset()
+										{
+										coal_expanded_percent = 0.0;
+										coal_ore_percent = 0.0;
+										coal_current_val = 5;
+										coal_val = 0.0;
+										coal_max_num = 24;
+										magnetite_expanded_percent = 0.0;
+										magnetite_ore_percent = 0.0;
+										magnetite_current_val = 7;
+										magnetite_val = 0.0;
+										magnetite_max_num = 20;
+										bauxite_expanded_percent = 0.0;
+										bauxite_ore_percent = 0.0;
+										bauxite_current_val = 10;
+										bauxite_val = 0.0;
+										bauxite_max_num = 16;
+										chalcopyrite_expanded_percent = 0.0;
+										chalcopyrite_ore_percent = 0.0;
+										chalcopyrite_current_val = 15;
+										chalcopyrite_val = 0.0;
+										chalcopyrite_max_num = 12;
+										spodumene_expanded_percent = 0.0;
+										spodumene_ore_percent = 0.0;
+										spodumene_current_val = 25;
+										spodumene_val = 0.0;
+										spodumene_max_num = 8;
+										avg_expanded_percent = 0.0;
+										average_percent = 0.0;
+										min_percent = 0.0;
+										max_percent = 0.0;
+										match_num = 0;
+										}
+								</script>
+							</body>
+						</div>
+					</div>
+				</div>
+				</main>
+				<footer class="page-footer">
+					<div class="container">
+						<div class="row">
+							<div class="footer-copyrights">
+								<div class="container">
+									<div class="copyright-container">
+										<span class="white-text copyright-span">© 2015 - <em>Entire site</em> designed and developed by Westwood Robotics</span>
+										<a href="https://github.com/WestwoodRobotics/BEST-2015-Public-Code">Calculator on GitHub</a>
+									</div>
+								</div>
+								<a class="white-text right truncate" href="#" target="_blank">Back to Top</a>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</body>
+		</html>
